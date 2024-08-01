@@ -1,0 +1,27 @@
+.selection{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 3px rgb(148, 147, 147);
+    padding-left: 5%;
+    width: 82%;
+}
+
+.selection-name{
+    font-size: larger;
+    width: 40%;
+}
+
+.selection-price{
+    font-size: larger;
+    color: green;
+    width: 40%;
+}
+
+.selection input{
+    margin-top: 20px;
+    width: 20%;
+    height: 20px;
+}

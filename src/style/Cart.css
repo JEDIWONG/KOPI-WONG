@@ -1,0 +1,56 @@
+.cart-page-container{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}   
+
+.cart-page-container h1{
+    text-align: center;
+}
+
+.cart-page-container h1::after{
+    display: block;
+    content: "_______________";
+    font-size: 40px;
+    color: gold;
+}
+
+.cart-item-list{
+    margin-top: 50px;
+}
+
+.cart-total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(250, 186, 36);
+}
+
+.cart-total p{
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+
+.cart-total h2{
+    margin-left: 10%;
+    width: 60%;
+    text-align: left;
+    font-size: 30px;
+}
+
+.checkout-button{
+    background-color: rgb(86, 175, 253);
+    color: white;
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px rgb(165, 165, 165);
+    font-weight: bold;
+    font-size: 20px;
+}
