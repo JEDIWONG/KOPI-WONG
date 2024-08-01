@@ -1,4 +1,4 @@
-# KOPI WONG - Food Ordering Website For Mobile Screen
+# KOPI WONG - Food Ordering Website
 
 < FrontEnd Project />
 
