@@ -1,9 +1,7 @@
-# React + Vite
+# KOPI WONG - Food Ordering Website For Mobile Screen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+< FrontEnd Project />
 
-Currently, two official plugins are available:
+Built Using React.JS with Material UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# KOPI-WONG" 
+Basically A Practice On How To Build A Web based App Using React.

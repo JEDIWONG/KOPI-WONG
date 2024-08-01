@@ -11,7 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout/>}>
+          <Route path="/Kopi-Wong/" element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path="/cart" element={<Cart/>}></Route>
             <Route path="/food/:id" element={<FoodPage/>}/>
