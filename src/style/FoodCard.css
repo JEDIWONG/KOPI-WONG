@@ -4,7 +4,7 @@
 }
 
 .food-card-container{
-    
+    width: 200px;
     height:fit-content;
     box-shadow: 0px 0px 10px grey;
     margin-right: 5%;

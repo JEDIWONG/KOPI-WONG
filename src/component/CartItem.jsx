@@ -6,7 +6,7 @@ function CartItem(props){
     return(
         <>
             <div >
-                <Link className="item-card" to={`/food/${props.id}`}>
+                <Link className="item-card" to={`/Kopi-Wong/food/${props.id}`}>
                     <img src={props.img}></img>
                     <div className="item-details">
                         <h2>{props.name}</h2>

@@ -9,7 +9,7 @@ function Cart(){
         <>
             <div className="cart-page-container">
 
-                <Link to={"/"}>
+                <Link to={"/Kopi-Wong"}>
                     <button className="back-button">Back</button>
                 </Link>
 

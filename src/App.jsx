@@ -13,12 +13,11 @@ function App() {
         <Routes>
           <Route path="/Kopi-Wong/" element={<Layout/>}>
             <Route index element={<Home/>}/>
-            <Route path="/cart" element={<Cart/>}></Route>
-            <Route path="/food/:id" element={<FoodPage/>}/>
+            <Route path="cart" element={<Cart/>}></Route>
+            <Route path="food/:id" element={<FoodPage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
-      
     </>
   )
 }

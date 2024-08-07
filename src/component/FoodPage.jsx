@@ -20,25 +20,72 @@ function FoodPage(){
         setAmount(amount+1);
     }
 
-    const item = (
-        {
-            imgUrl:Product[id-1].imgUrl,
-            type:Product[id-1].type,
-            name:Product[id-1].name,
-            price:Product[id-1].price
+    var item;
+
+    if(Product[id-1].type=="Drink"){
+
+        item = (
+            {
+                imgUrl:Product[id-1].imgUrl,
+                type:Product[id-1].type,
+                name:Product[id-1].name,
+                price:Product[id-1].price,
+                
+            }
+        )
+
+    }
+    else{
+        item = (
+            {
+                imgUrl:Product[id-1].imgUrl,
+                type:Product[id-1].type,
+                name:Product[id-1].name,
+                price:Product[id-1].price,
+                addon:Product[id-1].addon
+            }
+        )
+    }
+
+    function showContent(){
+        
+        
+
+        if(item.type=="Drink"){
+
+            return(
+            <>  
+                <div style={{display:"flex",flexDirection:"row",marginLeft:"10%n"}}>
+                    <p>Not Available</p>
+                    <input type="radio"></input>
+                </div>
+                
+            </>);
+            
         }
-    )
+        else{
+            
+            return(item.addon.map(a=>(
+                <SelectionAdd name={a.name} price={a.price}></SelectionAdd>
+            )));
+
+        }
+    
+    }
+    
 
     return(
         <>
             <div className="food-page-container">
 
-                <Link to={`/`}>
+                <Link to={`/Kopi-Wong`}>
                     <button id="back">Back</button>
                 </Link>
                 
 
                 <img src={item.imgUrl}></img>
+
+                {console.log(item.imgUrl)}
 
                 <div className="food-detail">
                     <h1>{item.name}</h1>
@@ -51,12 +98,7 @@ function FoodPage(){
                     <p>(Allow Multiple Selection)</p>
                 </div>
 
-                
-                <SelectionAdd name="Egg" price="5.00"></SelectionAdd>
-                <SelectionAdd name="Chili" price="1.00"></SelectionAdd>
-                <SelectionAdd name="Ant" price="15.00"></SelectionAdd>
-                <SelectionAdd name="Bat" price="305.00"></SelectionAdd>
-
+                {showContent()}
                 
                 <h2 className="addon-title">Remark</h2>
                 <input type="text" className="textbox" placeholder="Enter Remark Here"></input>
