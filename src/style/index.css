@@ -1,0 +1,10 @@
+hr{
+    width: 100%;
+    color: rgb(255, 213, 0);
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+}

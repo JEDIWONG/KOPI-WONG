@@ -19,6 +19,7 @@
     flex-direction: column;
     width: 57%;
     color: black;
+    
 }
 
 .item-details h2{
@@ -37,5 +38,11 @@
     background-color: green;
     font-size: 18px;
     width: 100%;
+}
+
+.item-details-xtra{
+    color: rgb(58, 58, 58);
+    margin-left: 5%;
+    
 }
 

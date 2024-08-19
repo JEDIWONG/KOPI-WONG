@@ -1,0 +1,17 @@
+.page-container{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.page-container h1{
+    color: rgb(0, 225, 0);
+}
+
+.page-container img{
+    height: 100px;
+}
+
+.button-back{
+    
+    width: 80%;
+}

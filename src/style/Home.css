@@ -38,3 +38,7 @@
     width:  45%;
     height: inherit;
 }
+
+.active-background{
+    background-color: rgb(255, 187, 0);
+}
