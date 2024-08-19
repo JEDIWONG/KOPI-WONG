@@ -1,14 +1,29 @@
-# KOPI WONG - Food Ordering Website
+# REACT.Js Food Ordering Website
 
-< FrontEnd Project />
+**FrontEnd Project**
 
-Built Using React.JS with Material UI
+![QR - Project Demo](https://github.com/JEDIWONG/Kopi-Wong/tree/main/public/qr_code.png) 
 
-# Desc
+# Description
 
-Basically A Practice On How To Build A Web based App Using React.
+This FrontEnd project are a replica of the existing food ordering system that used daily by consumer in this era.
+
+I developing this project to learn and improve my familiarity on building front end with React.Js and other library and packages.
+
+**Tech Stack**
+
+Built Using,
+
+**Library** : React, Material UI 
+
+**Package** : React Router DOM
 
 # Project Demo 
+
+![Scan Here For Live Demo](https://github.com/JEDIWONG/Kopi-Wong/tree/main/public/qr_code.png) 
+
+**OR**
+
 [Click here for live Demo](https://jediwong.github.io/Kopi-Wong/).
 
 
