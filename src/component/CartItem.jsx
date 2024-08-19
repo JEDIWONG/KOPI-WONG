@@ -10,8 +10,8 @@ function CartItem(props){
                     <img src={props.img}></img>
                     <div className="item-details">
                         <h2>{props.name}</h2>
-                        <p>Egg + RM 5.00</p>
-                        <p></p>
+                        <hr style={{marginLeft:"3%"}}/>
+                        <p className="item-details-xtra">No Add-On</p>
                         <p className="price">Total : RM {props.price}</p>
                     </div>
                 </Link>

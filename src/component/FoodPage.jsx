@@ -2,128 +2,98 @@ import { Link, useParams } from "react-router-dom";
 import { Product } from "./Product";
 import '../style/FoodPage.css';
 import SelectionAdd from "./SelectionAdd";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserCartContext } from "../App";
 
-function FoodPage(){
+function FoodPage() {
+    const { id } = useParams();
+    const { userCart, setUserCart } = useContext(UserCartContext);
 
-    const {id} = useParams();
+    const [amount, setAmount] = useState(get_current_amount());
+    const product = Product[id - 1];
 
-    const [amount,setAmount] = useState(0);
+    function get_current_amount(){
+        var amt=0;
 
-    function decreaseAmount(){
-        if(amount>0){
-            setAmount(amount-1);
+        if(userCart!=0){
+            userCart.map(p=>{
+                if(p.foodId==id){
+                    amt++;
+                }
+            })
+        }
+
+        return amt;
+    }
+
+    function decreaseAmount() {
+        if (amount > 0) {
+            setAmount(amount - 1);
+            setUserCart(prevCart => prevCart.slice(0, -1)); // Avoid direct mutations
         }
     }
 
-    function increaseAmount(){
-        setAmount(amount+1);
+    function increaseAmount() {
+        setAmount(amount + 1);
+        setUserCart(prevCart => [...prevCart, { id: product.id, foodId: id }]);
     }
 
-    var item;
-
-    if(Product[id-1].type=="Drink"){
-
-        item = (
-            {
-                imgUrl:Product[id-1].imgUrl,
-                type:Product[id-1].type,
-                name:Product[id-1].name,
-                price:Product[id-1].price,
-                
-            }
-        )
-
-    }
-    else{
-        item = (
-            {
-                imgUrl:Product[id-1].imgUrl,
-                type:Product[id-1].type,
-                name:Product[id-1].name,
-                price:Product[id-1].price,
-                addon:Product[id-1].addon
-            }
-        )
-    }
-
-    function showContent(){
-        
-        
-
-        if(item.type=="Drink"){
-
-            return(
-            <>  
-                <div style={{display:"flex",flexDirection:"row",marginLeft:"10%n"}}>
+    function showContent() {
+        if (product.type === "Drink") {
+            return (
+                <div style={{ display: "flex", flexDirection: "row", marginLeft: "10%", backgroundColor: "rgb(255, 255, 255)", boxShadow: "0px 1px 3px rgb(148, 147, 147)", width: "80%", paddingLeft: "5%" }}>
                     <p>Not Available</p>
-                    <input type="radio"></input>
+                    <input type="radio" defaultChecked={true} style={{ marginLeft: "60%" }}></input>
                 </div>
-                
-            </>);
-            
+            );
+        } else {
+            return product.addon.map(a => (
+                <SelectionAdd key={a.name} name={a.name} price={a.price} />
+            ));
         }
-        else{
-            
-            return(item.addon.map(a=>(
-                <SelectionAdd name={a.name} price={a.price}></SelectionAdd>
-            )));
-
-        }
-    
     }
-    
 
-    return(
-        <>
-            <div className="food-page-container">
+    return (
+        <div className="food-page-container">
+            <Link to={`/Kopi-Wong/`}>
+                <button id="back">Back</button>
+            </Link>
 
-                <Link to={`/Kopi-Wong`}>
-                    <button id="back">Back</button>
-                </Link>
-                
+            <img src={product.imgUrl} alt={product.name} />
 
-                <img src={item.imgUrl}></img>
-
-                {console.log(item.imgUrl)}
-
-                <div className="food-detail">
-                    <h1>{item.name}</h1>
-                    <h2>RM {item.price}</h2>
-                    <h3>{item.type}</h3>
-                </div>
-
-                <div className="addon-title">
-                    <h2>Add-On</h2>
-                    <p>(Allow Multiple Selection)</p>
-                </div>
-
-                {showContent()}
-                
-                <h2 className="addon-title">Remark</h2>
-                <input type="text" className="textbox" placeholder="Enter Remark Here"></input>
-
-                <div className="button-order-container">
-                    <h>
-                        ORDER
-                    </h>
-
-                    <button className="button-amount" onClick={increaseAmount}>
-                        +
-                    </button>
-
-                    <p className="amount-label">
-                        {amount}
-                    </p>
-
-                    <button className="button-amount" onClick={decreaseAmount}>
-                        -
-                    </button>
-                </div>
-            
+            <div className="food-detail">
+                <h1>{product.name}</h1>
+                <h2>RM {product.price}</h2>
+                <h3>{product.type}</h3>
             </div>
-        </>
-    );
-};
+
+            <div className="addon-title">
+                <h2>Add-On</h2>
+                <p>(Allow Multiple Selection)</p>
+            </div>
+
+            {showContent()}
+
+            <h2 className="addon-title">Remark</h2>
+            <input type="text" className="textbox" placeholder="Enter Remark Here"></input>
+
+            <div className="button-order-container">
+                <h>ORDER</h>
+
+                <button className="button-amount" onClick={increaseAmount}>
+                    +
+                </button>
+
+                <p className="amount-label">
+                    {amount}
+                </p>
+
+                <button className="button-amount" onClick={decreaseAmount}>
+                    -
+                </button>
+            </div>
+        </div>
+    )
+}
 
 export default FoodPage;
