@@ -2,8 +2,7 @@
 
 **FrontEnd Project**
 
-![QR - Project Demo](https://github.com/JEDIWONG/Kopi-Wong/tree/main/public/qr_code.png) 
-![image](https://github.com/user-attachments/assets/6913bdeb-e048-458a-b5b1-fc37815b928d)
+![Scan Here For Project Demo](https://github.com/user-attachments/assets/489ad87e-42fa-4c2c-8823-36712dfdddaf)
 
 # Description
 
@@ -21,7 +20,7 @@ Built Using,
 
 # Project Demo 
 
-![Scan Here For Live Demo](https://github.com/JEDIWONG/Kopi-Wong/tree/main/public/qr_code.png) 
+![Scan Here For Live Demo](https://github.com/user-attachments/assets/489ad87e-42fa-4c2c-8823-36712dfdddaf) 
 
 **OR**
 
